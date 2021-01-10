@@ -5,79 +5,109 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    
     <title>Petential</title>
 
     <link rel="stylesheet" href="../css/home.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
-    <!-- Font Awesome -->
-    <script src="https://kit.fontawesome.com/26da0e4274.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
+    <!-- <a href="/" class="nav__link" data-link>Dashboard</a>
+    <a href="/pet" class="nav__link" data-link>Pet</a>
+    
+    <div class="container">
+        <div id="app">
+        
+        </div>
+        <div id="date"></div>
+        <div class="task-list">
+            <ul id="list"></ul>
+        </div>
+    
+        <div id="pet">
+            <h1>kitty</h1>
+        </div>
 
-    <div class="wrapper">
-        <nav id="task-list">
+        <div class="add-item">
+            <input type="text" id="item" placeholder="Add a reminder">
+        </div>
+    </div>
+    
 
-            <div class="list-header">
-                <h1>Reminders</h1>
+    
+<script type="module" src="/static/index.js"></script> -->
+<div class="wrapper">
+    <nav id="task-list">
+
+        <div class="list-header">
+            <h1>Reminders</h1>
+        </div>
+
+
+        <h2>Today</h2>
+        <p>You have no reminders today.</p>
+
+        <h2>This Week</h2>
+        <p>You have no reminders this week.</p>
+
+        <h2>This Month</h2>
+        <p>You have no reminders this month.</p>
+
+        <div id="add">
+            <button type="button" class="btn btn-outline-secondary">+ Reminder</button>
+        </div>
+
+        <div id="save">
+            <button type="button" class="btn btn-outline-success">Save</button>
+        </div>
+
+    </nav>
+
+
+    <div id="content">
+
+        <div class="d-flex justify-content-between">
+            <div class="p-2">
+                <button type="button" id="sidebarCollapse" class="btn btn-secondary">
+                    <i class="fas fa-tasks"></i>
+                    <span>Reminders</span>
+                </button>
             </div>
-
-
-            <h2>Today</h2>
-            <p>You have no reminders today.</p>
-
-            <h2>This Week</h2>
-            <p>You have no reminders this week.</p>
-
-            <h2>This Month</h2>
-            <p>You have no reminders this month.</p>
-
-            <div id="add">
-                <button type="button" class="btn btn-outline-secondary">+ Reminder</button>
+            <div class="p-2">Pet Name</div>
+            <div class="p-2">
+                <button type="button" class="btn btn-secondary">
+                    <span>Log Out</span>
+                </button>
             </div>
+        </div>
 
-            <div id="save">
-                <button type="button" class="btn btn-outline-success">Save</button>
-            </div>
-
-        </nav>
-
-
-        <div id="content">
-
-            <div class="d-flex justify-content-between">
-                <div class="p-2">
-                    <button type="button" id="sidebarCollapse" class="btn btn-secondary">
-                        <i class="fas fa-tasks"></i>
-                        <span>Reminders</span>
-                    </button>
-                </div>
-                <div class="p-2">Pet Name</div>
-                <div class="p-2">
-                    <button type="button" class="btn btn-secondary">
-                        <span>Log Out</span>
-                    </button>
-                </div>
-            </div>
-
-            <div id="pet">
-                <img src="../frontend/static/img/cat.png" id="cat">
-            </div>
-
+        <div id="pet">
+            <img src="../img/cat.png" id="cat">
         </div>
 
     </div>
 
-   
+</div>
 
 
-    <script src="../js/home.js"></script>
-    <script type="module" src="/frontend/static/index.js"></script>
 
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+<script >
+    $(document).ready(function(){
+        $('#sidebarCollapse').on('click', function () {
+    $('#task-list').toggleClass('active');
+});
+
+});
+</script>
+<script type="module" src="../frontend/static/index.js"></script>
 </body>
+
+</html>
 
 </html>

@@ -1,10 +1,8 @@
-// import Dashboard from "./views/Dashboard.js";
-
 const navigateTo = url => {
     history.pushState(null, null, url);
     router();
 }
-
+// import Dashboard from "./views/Dashboard.js";
 const router = async () => {
     const routes = [
         { path: "/", view: Dashboard },
