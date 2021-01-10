@@ -10,34 +10,14 @@
 
     <link rel="stylesheet" href="../css/home.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-auth.js"></script>
 
+    <script src="../js/auth.js"></script>
 </head>
 
 <body>
-    <!-- <a href="/" class="nav__link" data-link>Dashboard</a>
-    <a href="/pet" class="nav__link" data-link>Pet</a>
     
-    <div class="container">
-        <div id="app">
-        
-        </div>
-        <div id="date"></div>
-        <div class="task-list">
-            <ul id="list"></ul>
-        </div>
-    
-        <div id="pet">
-            <h1>kitty</h1>
-        </div>
-
-        <div class="add-item">
-            <input type="text" id="item" placeholder="Add a reminder">
-        </div>
-    </div>
-    
-
-    
-<script type="module" src="/static/index.js"></script> -->
 <div class="wrapper">
     <nav id="task-list">
 
@@ -45,9 +25,9 @@
             <h1>Reminders</h1>
         </div>
        
-        <div id="date"></div>
+        <h2 id="date"></h2>
         <h2>Today</h2>
-        <div class="content"><p>You have no reminders today.</p>
+        <div class="content"><p></p>
         <ul id="list">
             
         </ul>
@@ -55,11 +35,15 @@
         </div>
 
         <h2>This Week</h2>
-        <p>You have no reminders this week.</p>
+        <ul>
+            <li>Go Jogging for 10 minutes</li>
+        </ul>
 
         <h2>This Month</h2>
-        <p>You have no reminders this month.</p>
-
+       
+        <ul>
+            <li>Zoom Party time</li>
+        </ul>
         <div id="add">
                 <i class="fa fa-plus-circle"></i>
                 <input type="text" id="input" placeholder="Add a reminder">
@@ -87,7 +71,7 @@
             </div>
             <div class="p-2">Pet Name</div>
             <div class="p-2">
-                <button type="button" class="btn btn-secondary">
+                <button type="button" onclick="signOut()" class="btn btn-secondary">
                     <span>Log Out</span>
                 </button>
             </div>
