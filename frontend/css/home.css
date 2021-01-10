@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap');
+
+.wrapper {
+    display: flex;
+    width: 100vw;
+    align-items: stretch;
+    font-family: 'Architects Daughter', cursive;
+}
+
+#task-list {
+    min-width: 400px;
+    max-width: 400px;
+    min-height: 100vh;
+    transition: all 0.3s;
+    margin-top: 10px;
+    padding-left: 15px;
+}
+
+#task-list.active {
+    margin-left: -400px;
+}
+
+h1 {
+    text-align: center;
+}
+
+#cat {
+    min-width: 250px;
+    min-height: 250px;
+    padding-top: 100px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
+}
+
+#add{
+    padding: 10px;
+}
+
+#save{
+    padding: 10px;
+    padding-top: 30px;
+}
+
+.navbar {
+    margin-top: 10px;
+}
+
+.fa-tasks {
+    margin-right: 5px;
+}
+
+.d-flex span{
+    font-size: 16pt;
+}
+
+.bounce {
+    animation-duration: 2s;
+    animation-iteration-count: 1;
+    transform-origin: bottom;
+    animation-name: bounce;
+    animation-timing-function: ease;
+}
+
+@keyframes bounce {
+    0%   { transform: scale(1,1)    translateY(0); }
+    10%  { transform: scale(1.1,.9) translateY(0); }
+    30%  { transform: scale(.9,1.1) translateY(-30px); }
+    50%  { transform: scale(1,1)    translateY(0); }
+    57%  { transform: scale(1,1)    translateY(-10px); }
+    64%  { transform: scale(1,1)    translateY(0); }
+    100% { transform: scale(1,1)    translateY(0); }
+}
