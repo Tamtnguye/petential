@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap');
+
+#app-name {
+    text-align: center;
+    padding: 25px;
+}
+
+span, .fa-paw {
+    font-size: 30pt;
+    font-weight: bold;
+  }
+
+.fa-paw {
+    transform: rotate(-20deg);
+    padding-right: 10px;
+}
+
+.btn-primary {
+    margin-top: 10px;
+    margin-bottom: 15px;
+    width: 250px;
+}
+
+.wrapper {
+    justify-content: center;
+    text-align: center;
+    margin: auto;
+    width: 50%;
+    font-size: 16pt;
+    font-family: 'Architects Daughter', cursive;
+}
+
+#username, #password {
+    margin-bottom: 10px;
+    width: 250px;
+}
+
+.btn-outline-dark, hr {
+    width: 250px;
+}
+
+.pets{
+    display: flex;
+    justify-content: center;
+}
+
+.pets img {
+    min-width: 250px;
+    width: 20%;
+}
+
+#dog{
+    transform: scale(0.65);
+}
+
+#cat{
+    max-height: 250px;
+    align-self: center;
+}
