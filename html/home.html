@@ -44,10 +44,15 @@
         <div class="list-header">
             <h1>Reminders</h1>
         </div>
-
-
+       
+        <div id="date"></div>
         <h2>Today</h2>
-        <p>You have no reminders today.</p>
+        <div class="content"><p>You have no reminders today.</p>
+        <ul id="list">
+            
+        </ul>
+        
+        </div>
 
         <h2>This Week</h2>
         <p>You have no reminders this week.</p>
@@ -56,6 +61,9 @@
         <p>You have no reminders this month.</p>
 
         <div id="add">
+                <i class="fa fa-plus-circle"></i>
+                <input type="text" id="input" placeholder="Add a reminder">
+           
             <button type="button" class="btn btn-outline-secondary">+ Reminder</button>
         </div>
 
@@ -70,6 +78,8 @@
 
         <div class="d-flex justify-content-between">
             <div class="p-2">
+                
+                
                 <button type="button" id="sidebarCollapse" class="btn btn-secondary">
                     <i class="fas fa-tasks"></i>
                     <span>Reminders</span>
@@ -105,7 +115,7 @@
 
 });
 </script>
-<script type="module" src="../frontend/static/index.js"></script>
+<script type="module" src="../static/index.js"></script>
 </body>
 
 </html>
