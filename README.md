@@ -12,6 +12,17 @@
 
  to get all the dependency
 
+
+## add auth.js
+
+in the js folder make a auth.js and put in your firebase SDK info
+should have something like:
+firebaseConfig
+    apiKey
+    authDomain
+
+    etc
+    
  ## to run
 
  in terminal:
