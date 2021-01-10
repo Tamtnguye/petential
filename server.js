@@ -3,7 +3,7 @@ const path = require("path");
 const PORT = 5001
 const app = express();
 
-app.use("/static", express.static(path.resolve(__dirname,"frontend", "static")));
+app.use(express.static("frontend"));
 
 app.get("/*", (req, res) => {
     res.sendFile(path.resolve(__dirname,"html","home.html"));
