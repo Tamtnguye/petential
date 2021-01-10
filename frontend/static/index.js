@@ -48,3 +48,25 @@ document.addEventListener("DOMContentLoaded", () => {
     router();
 });
 
+//list
+
+const list = document.getElementById("list");
+
+function addReminder (toDo) {
+
+    const text = `<li class="item">
+            <i class="co fa fa-circle-thin" job="complete"></i>
+            <p class="text">${toDo} </p>
+            <i class="de fa fa-trash-o" job="delete></i>
+    </li>`
+
+    const position = "beforeend";
+    list.insertAdjacentElement(position, text);
+
+}
+
+//event to add
+
+// document.addEventListener("keyup", event => {
+//     if (event.key ==)
+// })
