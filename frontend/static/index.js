@@ -1,70 +1,121 @@
+import Dashboard from "./views/Dashboard.js";
+
 const navigateTo = url => {
     history.pushState(null, null, url);
     router();
 }
-// import Dashboard from "./views/Dashboard.js";
-const router = async () => {
-    const routes = [
-        { path: "/", view: Dashboard },
-        // { path: "/reminder", view: () => console.log("Viewing Reminder")},
-        // { path: "/pet", view: () => console.log("Viewing pet")}
-        // { path: "/", view: () => console.log("Viewing Dashboard")}
-    ];
 
-    const possibleMatch = routes.map(route => {
-        return {
-            route: route,
-            isMatch: location.pathname === route.path
-        };
-    });
+// const router = async () => {
+//     const routes = [
+//         { path: "/", view: Dashboard },
+//         // { path: "/reminder", view: () => console.log("Viewing Reminder")},
+//         // { path: "/pet", view: () => console.log("Viewing pet")}
+//         // { path: "/", view: () => console.log("Viewing Dashboard")}
+//     ];
 
-        let match = possibleMatch.find(possibleMatches => possibleMatches.isMatch);
+//     const possibleMatch = routes.map(route => {
+//         return {
+//             route: route,
+//             isMatch: location.pathname === route.path
+//         };
+//     });
 
-        if (!match) {
-            match = {
-                route: routes[0],
-                isMatch: true
-            }
-        }
-        const view = new match.route.view();
+//         let match = possibleMatch.find(possibleMatches => possibleMatches.isMatch);
 
-        document.querySelector("#app").innerHTML = await view.getHtml();
-        console.log(match.route.view());
-};
+//         if (!match) {
+//             match = {
+//                 route: routes[0],
+//                 isMatch: true
+//             }
+//         }
+//         const view = new match.route.view();
 
-window.addEventListener("popstate", router);
+//         document.querySelector("#app").innerHTML = await view.getHtml();
+//         console.log(match.route.view());
+// };
 
-document.addEventListener("DOMContentLoaded", () => {
+// window.addEventListener("popstate", router);
 
-    document.body.addEventListener("click", e => {
-        if (e.target.matches("[data-link")) {
-            e.preventDefault();
-            navigateTo(e.target.href);
-        }
-    })
+// document.addEventListener("DOMContentLoaded", () => {
 
-    router();
-});
+//     document.body.addEventListener("click", e => {
+//         if (e.target.matches("[data-link")) {
+//             e.preventDefault();
+//             navigateTo(e.target.href);
+//         }
+//     })
 
-//list
+//     router();
+// });
+
+
+//store a todo
+
+//when task is done
+
+function completeTodo(element) {
+    element.classList.toggle(Check);
+    element.classList.toggle(Uncheck);
+    element.parentNode.querySelector(".text").classList.toggle(LineThru);
+    LIST[element.id].done = LIST[element.id].done ? false : true; 
+}
+
+// add to list
 
 const list = document.getElementById("list");
 
-function addReminder (toDo) {
+const dateElement = document.getElementById("date");
+const input = document.getElementById("input");
 
-    const text = `<li class="item">
-            <i class="co fa fa-circle-thin" job="complete"></i>
-            <p class="text">${toDo} </p>
-            <i class="de fa fa-trash-o" job="delete></i>
-    </li>`
+const Uncheck ="fa-check-circle";
+const Check = "fa-circle-thin";
+const LineThru = "lineThrough";
+
+//variable
+let LIST , id 
+//show todays date
+const options = {weekday: "long", month:"short", day:"numeric"}
+const today = new Date();
+
+dateElement.innerHTML = today.toLocaleDateString("en-US", options);
+
+//add to do function
+
+function addReminder (toDo, id, done, trash) {
+
+    if(trash){ return; }
+    const DONE = done ? Check : Uncheck;
+    const LINE = done ? LineThru : "";
+    const item = `<li class="item">
+            <i class="fa ${DONE}" job="complete" id="${id}"></i>
+            <p class="text" ${LINE}>${toDo} </p>
+            <i class="fa fa-trash-o delete" job="delete id="${id}></i>
+            </li>
+    `
 
     const position = "beforeend";
-    list.insertAdjacentElement(position, text);
+    list.insertAdjacentHTML(position, item);
 
 }
-
+// addReminder("buy coffee", 1, false, false)
 //event to add
 
-// document.addEventListener("keyup", event => {
-//     if (event.key ==)
-// })
+document.addEventListener("keyup", event => {
+    if (event.keyCode === 13){
+        const toDo = input.value;
+        //if the input isn't empty
+        if(toDo){
+            addReminder(toDo,id, false, false);
+            LIST.push(
+                {
+                    name: toDo,
+                    id: id,
+                    done: false,
+                    trash: false
+                });  
+                id++
+        }
+        input.value = "";
+        
+    }
+})
